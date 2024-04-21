@@ -9,8 +9,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { RequestWithUser } from 'src/auth/auth.controller';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { RequestWithUser } from '../auth/auth.controller';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { StorageService } from './storage.service';
 
 @Controller('storage')

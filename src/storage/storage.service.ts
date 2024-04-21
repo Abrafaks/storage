@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { promises as fs } from 'fs';
 import * as path from 'path';
-import { RequestWithUser } from 'src/auth/auth.controller';
+import { RequestWithUser } from '../auth/auth.controller';
 
 @Injectable()
 export class StorageService {
