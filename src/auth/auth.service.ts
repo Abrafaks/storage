@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { CreateUserDto } from 'src/user/dto/create-user.dto';
-import { User } from 'src/user/user.entity';
-import { UserService, UserWithoutPassword } from 'src/user/user.service';
+import { CreateUserDto } from '../user/dto/create-user.dto';
+import { User } from '../user/user.entity';
+import { UserService, UserWithoutPassword } from '../user/user.service';
 import { AuthorizeUserDto } from './dto/authorizeUser.dto';
 
 export interface JWT_Payload {
