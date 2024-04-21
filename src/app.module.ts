@@ -4,10 +4,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
+import { StorageController } from './storage/storage.controller';
+import { StorageService } from './storage/storage.service';
 import { User } from './user/user.entity';
 import { UserModule } from './user/user.module';
-import { StorageService } from './storage/storage.service';
-import { StorageController } from './storage/storage.controller';
 
 @Module({
   imports: [
@@ -19,7 +19,10 @@ import { StorageController } from './storage/storage.controller';
     }),
     UserModule,
     AuthModule,
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: ['.env', '.env.test'],
+    }),
   ],
   controllers: [AppController, StorageController],
   providers: [AppService, StorageService],
